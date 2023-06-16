@@ -52,3 +52,16 @@ public class MiServlet extends HttpServlet{
    ....
 }
 ```
+-----------------------------------------------------------------------------------------------------------------------------------------
+Propuesta BASE DE DATOS:
+
+<img width="520" alt="health_map" src="https://github.com/master-java-uned/2023/assets/108556884/aee6fa42-7b7d-424d-9417-f0a9e08de5de">
+
+
+
+
+Propuesta Interfaz Pública prototipo Health Map:
+
+<img width="545" alt="worldHealth" src="https://github.com/master-java-uned/2023/assets/108556884/5088d083-7c1b-4170-98d8-ea312a2f16f3">
+
+
