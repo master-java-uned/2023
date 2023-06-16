@@ -19,7 +19,7 @@ import unedMasterJavaModelo.*;
 public class InicioSesion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	 private UserDbd dbd;
+	 private UsuarioDbd dbd;
 	    private DataDbd dataDbd;
 	    private CountryDbd countryDbd;
 	    private HealthIndicadorDbd healthIndicadorDbd;
@@ -32,7 +32,7 @@ public class InicioSesion extends HttpServlet {
         super();
         
         
-            dbd = new UserDbd();
+            dbd = new UsuarioDbd();
             dataDbd = new DataDbd();
             countryDbd = new CountryDbd();
             healthIndicadorDbd = new HealthIndicadorDbd();
@@ -52,25 +52,25 @@ public class InicioSesion extends HttpServlet {
 		
 HttpSession sesion = request.getSession(true); //almaceno la sesion
 		
-		User user = new User("dinora", "root");
+		Usuario user = new Usuario("dinora", "root");
 	
 		dbd.getSession(user);
 		
-		String usuarioAcceso = request.getParameter("username"); //almaceno el usuario
+		String usuarioAcceso = request.getParameter("nombre"); //almaceno el usuario
 		response.getWriter().append("\nUSUARIO: " + usuarioAcceso); //visualizao el valor del usuario
 
-		String passAcceso = request.getParameter("password"); //almaceno el pass
+		String passAcceso = request.getParameter("clave"); //almaceno el pass
 		response.getWriter().append("\nPASSWORD: " + passAcceso); //visualizao el valor del pass
 				
-		User usuario = new User();
-        usuario.setUsername(usuarioAcceso);
-        usuario.setPassword(passAcceso);
+		Usuario usuario = new Usuario();
+        usuario.setNombre(usuarioAcceso);
+        usuario.setClave(passAcceso);
         
         String tipoUsuario = dbd.getSession(usuario);
        //System.out.println("\nEl tipo de usuario es: " + tipoUsuario);
 		
 		
-        if (tipoUsuario.equals("NO_USER")) {
+        if (tipoUsuario.equals("NO_USUARIO")) {
         	response.sendRedirect("index.jsp?estado1");
         } else {
         	
