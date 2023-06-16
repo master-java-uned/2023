@@ -20,9 +20,9 @@
 		<fieldset>
     		<h1 >World Health Bank</h1>
 			
-	<label>Usuario</label>			<input name="username" type="text"  />
+	<label>Usuario</label>			<input name="nombre" type="text"  />
 				
-	<label> Clave</label>			<input name="password" type="password"  />
+	<label> Clave</label>			<input name="clave" type="password"  />
 			
 			
         		<input type= "submit"  value= "Login"/> 
